@@ -2,9 +2,10 @@ import psutil
 import logger
 
 def main():
-    pass
+    network_res = _retrive_resources()
+    print(network_res)
 
-def _retrive_resources:
+def _retrive_resources():
     network_res = psutil.net_io_counters(pernic=true)
     return network_res
 
