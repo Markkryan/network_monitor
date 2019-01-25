@@ -1,5 +1,5 @@
 import psutil
-import logger
+import logging
 
 def main():
     network_res = _retrive_resources()
