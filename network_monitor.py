@@ -1,21 +1,19 @@
 import psutil
 
-
 def main():
-    network_res = _retrive_resources()
+    ntwrk_rsc = _retrv_rsc()
     #print(network_res)
-    print(_retrieve_et_resource(network_res))
-    print(_retrieve_wifi_resource(network_res))
+    print(_retrv_et_rsc(ntwrk_rsc))
+    print(_retrv_wifi_rsc(ntwrk_rsc))
 
-def _retrive_resources():
-    network_res = psutil.net_io_counters(pernic=True)
-    return network_res
+def _retrv_rsc():
+    return psutil.net_io_counters(pernic=True)
 
-def _retrieve_et_resource(resource):
-    return resource["Ethernet"]
+def _retrv_et_rsc(rsc):
+    return rsc["Ethernet"]
 
-def _retrieve_wifi_resource(resource):
-    return resource["Wi-Fi"]
+def _retrv_wifi_rsc(rsc):
+    return rsc["Wi-Fi"]
 
 if __name__ == "__main__":
     main()
